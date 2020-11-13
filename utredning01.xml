@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<composition p1:type="COMPOSITION" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" archetype_node_id="openEHR-EHR-COMPOSITION.kreftmelding_kolorektalkreft_dips.v1" xmlns:p1="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.openehr.org/v1">
+  <name>
+    <value>Kreftmelding kolorektalkreft dips</value>
+  </name>
+  <uid xsi:type="OBJECT_VERSION_ID">
+    <value>2a22b66f-6681-481e-acaf-2282a6794655::ehr_craft::1</value>
+  </uid>
+  <archetype_details>
+    <archetype_id>
+      <value>openEHR-EHR-COMPOSITION.kreftmelding_kolorektalkreft_dips.v1</value>
+    </archetype_id>
+    <template_id>
+      <value>kreftmelding_utredning</value>
+    </template_id>
+    <rm_version>1.0.4</rm_version>
+  </archetype_details>
+  <language>
+    <terminology_id>
+      <value>openehr</value>
+    </terminology_id>
+    <code_string>nb</code_string>
+  </language>
+  <territory>
+    <terminology_id>
+      <value>openehr</value>
+    </terminology_id>
+    <code_string>NO</code_string>
+  </territory>
+  <category>
+    <value />
+    <defining_code>
+      <terminology_id>
+        <value>openehr</value>
+      </terminology_id>
+      <code_string>433</code_string>
+    </defining_code>
+  </category>
+  <composer xsi:type="PARTY_IDENTIFIED">
+    <name>default</name>
+  </composer>
+  <context>
+    <start_time>
+      <value>2020-11-13T13:36:51+01:00</value>
+    </start_time>
+    <setting>
+      <value>secondary medical</value>
+      <defining_code>
+        <terminology_id>
+          <value>openehr</value>
+        </terminology_id>
+        <code_string>232</code_string>
+      </defining_code>
+    </setting>
+    <other_context xsi:type="ITEM_TREE" archetype_node_id="at0001">
+      <name>
+        <value>Tree</value>
+      </name>
+    </other_context>
+  </context>
+  <content xsi:type="OBSERVATION" archetype_node_id="openEHR-EHR-OBSERVATION.kreftmelding_kolorektal_utredning_dips.v1">
+    <name>
+      <value>Kreftmelding kolorektalkreft utredning</value>
+    </name>
+    <archetype_details>
+      <archetype_id>
+        <value>openEHR-EHR-OBSERVATION.kreftmelding_kolorektal_utredning_dips.v1</value>
+      </archetype_id>
+      <template_id>
+        <value>kreftmelding_utredning</value>
+      </template_id>
+      <rm_version>1.0.4</rm_version>
+    </archetype_details>
+    <language>
+      <terminology_id>
+        <value>ISO_639-1</value>
+      </terminology_id>
+      <code_string>nb</code_string>
+    </language>
+    <encoding>
+      <terminology_id>
+        <value>IANA</value>
+      </terminology_id>
+      <code_string>UTF-8</code_string>
+    </encoding>
+    <subject xsi:type="PARTY_SELF" />
+    <data archetype_node_id="at0001">
+      <name>
+        <value>Event Series</value>
+      </name>
+      <origin>
+        <value>2020-11-13T13:36:51.5558994+01:00</value>
+      </origin>
+      <events xsi:type="POINT_EVENT" archetype_node_id="at0002">
+        <name>
+          <value>Any event</value>
+        </name>
+        <time>
+          <value>2020-11-13T13:36:51.5558994+01:00</value>
+        </time>
+        <data xsi:type="ITEM_TREE" archetype_node_id="at0003">
+          <name>
+            <value>Tree</value>
+          </name>
+          <items xsi:type="ELEMENT" archetype_node_id="at0337">
+            <name>
+              <value>Funn i utredning</value>
+            </name>
+            <value xsi:type="DV_CODED_TEXT">
+              <value>Primærtumor (med eller uten metastase(r))</value>
+              <defining_code>
+                <terminology_id>
+                  <value>local</value>
+                </terminology_id>
+                <code_string>at0450</code_string>
+              </defining_code>
+            </value>
+          </items>
+          <items xsi:type="CLUSTER" archetype_node_id="at0537">
+            <name>
+              <value>Sykdomsutbredelse etter ferdig primærutredning og  før primærbehandling</value>
+            </name>
+            <items xsi:type="CLUSTER" archetype_node_id="openEHR-EHR-CLUSTER.kreftmelding_kolorektal_lokalisasjon_av_primaertumor_dips.v1">
+              <name>
+                <value>Lokalisasjon av primaertumor</value>
+              </name>
+              <archetype_details>
+                <archetype_id>
+                  <value>openEHR-EHR-CLUSTER.kreftmelding_kolorektal_lokalisasjon_av_primaertumor_dips.v1</value>
+                </archetype_id>
+                <template_id>
+                  <value>kreftmelding_utredning</value>
+                </template_id>
+                <rm_version>1.0.4</rm_version>
+              </archetype_details>
+              <items xsi:type="ELEMENT" archetype_node_id="at0001">
+                <name>
+                  <value>Lokalisajon</value>
+                </name>
+                <value xsi:type="DV_CODED_TEXT">
+                  <value>Colon (C18-C19)</value>
+                  <defining_code>
+                    <terminology_id>
+                      <value>local</value>
+                    </terminology_id>
+                    <code_string>at0002</code_string>
+                  </defining_code>
+                </value>
+              </items>
+              <items xsi:type="ELEMENT" archetype_node_id="at0004">
+                <name>
+                  <value>Spesifiser lokalisajon Colon</value>
+                </name>
+                <value xsi:type="DV_CODED_TEXT">
+                  <value>Ascendens (C18.2)</value>
+                  <defining_code>
+                    <terminology_id>
+                      <value>local</value>
+                    </terminology_id>
+                    <code_string>at0008</code_string>
+                  </defining_code>
+                </value>
+              </items>
+              <items xsi:type="ELEMENT" archetype_node_id="at0021">
+                <name>
+                  <value>Klinisk sikker kreft</value>
+                </name>
+                <value xsi:type="DV_CODED_TEXT">
+                  <value>Ja</value>
+                  <defining_code>
+                    <terminology_id>
+                      <value>local</value>
+                    </terminology_id>
+                    <code_string>at0022</code_string>
+                  </defining_code>
+                </value>
+              </items>
+            </items>
+            <items xsi:type="CLUSTER" archetype_node_id="at0349">
+              <name>
+                <value>Tumor (T-sykdom)</value>
+              </name>
+              <items xsi:type="ELEMENT" archetype_node_id="at0665">
+                <name>
+                  <value>Tumor Colon</value>
+                </name>
+                <value xsi:type="DV_CODED_TEXT">
+                  <value>T0 - Tumor ikke påvist</value>
+                  <defining_code>
+                    <terminology_id>
+                      <value>local</value>
+                    </terminology_id>
+                    <code_string>at0668</code_string>
+                  </defining_code>
+                </value>
+              </items>
+              <items xsi:type="CLUSTER" archetype_node_id="at0411">
+                <name>
+                  <value>Utredningsmetode</value>
+                </name>
+                <items xsi:type="ELEMENT" archetype_node_id="at0697">
+                  <name>
+                    <value>Utredningsmetode#1</value>
+                  </name>
+                  <value xsi:type="DV_CODED_TEXT">
+                    <value>Colo-/rectoskopi</value>
+                    <defining_code>
+                      <terminology_id>
+                        <value>local</value>
+                      </terminology_id>
+                      <code_string>at0702</code_string>
+                    </defining_code>
+                  </value>
+                </items>
+                <items xsi:type="ELEMENT" archetype_node_id="at0697">
+                  <name>
+                    <value>Utredningsmetode#2</value>
+                  </name>
+                  <value xsi:type="DV_CODED_TEXT">
+                    <value>MR</value>
+                    <defining_code>
+                      <terminology_id>
+                        <value>local</value>
+                      </terminology_id>
+                      <code_string>at0706</code_string>
+                    </defining_code>
+                  </value>
+                </items>
+                <items xsi:type="ELEMENT" archetype_node_id="at0697">
+                  <name>
+                    <value>Utredningsmetode#3</value>
+                  </name>
+                  <value xsi:type="DV_CODED_TEXT">
+                    <value>Colografi (CT)</value>
+                    <defining_code>
+                      <terminology_id>
+                        <value>local</value>
+                      </terminology_id>
+                      <code_string>at0710</code_string>
+                    </defining_code>
+                  </value>
+                </items>
+              </items>
+              <items xsi:type="ELEMENT" archetype_node_id="at0015">
+                <name>
+                  <value>Dato sykdommen ble bekreftet</value>
+                </name>
+                <value xsi:type="DV_DATE">
+                  <value>2020-11-13</value>
+                </value>
+              </items>
+            </items>
+            <items xsi:type="ELEMENT" archetype_node_id="at0344">
+              <name>
+                <value>Er regionale lymfeknutemetastaser påvist (N-sykdom)?</value>
+              </name>
+              <value xsi:type="DV_CODED_TEXT">
+                <value>Nei</value>
+                <defining_code>
+                  <terminology_id>
+                    <value>local</value>
+                  </terminology_id>
+                  <code_string>at0346</code_string>
+                </defining_code>
+              </value>
+            </items>
+            <items xsi:type="CLUSTER" archetype_node_id="at0377">
+              <name>
+                <value>N-sykdom</value>
+              </name>
+              <items xsi:type="CLUSTER" archetype_node_id="at0458">
+                <name>
+                  <value>Utredningsmetode</value>
+                </name>
+                <items xsi:type="ELEMENT" archetype_node_id="at0732">
+                  <name>
+                    <value>Utredningsmetode#1</value>
+                  </name>
+                  <value xsi:type="DV_CODED_TEXT">
+                    <value>MR</value>
+                    <defining_code>
+                      <terminology_id>
+                        <value>local</value>
+                      </terminology_id>
+                      <code_string>at0737</code_string>
+                    </defining_code>
+                  </value>
+                </items>
+                <items xsi:type="ELEMENT" archetype_node_id="at0732">
+                  <name>
+                    <value>Utredningsmetode#2</value>
+                  </name>
+                  <value xsi:type="DV_CODED_TEXT">
+                    <value>CT</value>
+                    <defining_code>
+                      <terminology_id>
+                        <value>local</value>
+                      </terminology_id>
+                      <code_string>at0735</code_string>
+                    </defining_code>
+                  </value>
+                </items>
+                <items xsi:type="ELEMENT" archetype_node_id="at0732">
+                  <name>
+                    <value>Utredningsmetode#3</value>
+                  </name>
+                  <value xsi:type="DV_CODED_TEXT">
+                    <value>Ultralyd</value>
+                    <defining_code>
+                      <terminology_id>
+                        <value>local</value>
+                      </terminology_id>
+                      <code_string>at0733</code_string>
+                    </defining_code>
+                  </value>
+                </items>
+              </items>
+            </items>
+            <items xsi:type="ELEMENT" archetype_node_id="at0348">
+              <name>
+                <value>Er fjernmetastaser påvist, inkludert lymfeknutemetastaser utenfor regionalt område (M-sykdom)?</value>
+              </name>
+              <value xsi:type="DV_CODED_TEXT">
+                <value>Ja</value>
+                <defining_code>
+                  <terminology_id>
+                    <value>local</value>
+                  </terminology_id>
+                  <code_string>at0413</code_string>
+                </defining_code>
+              </value>
+            </items>
+            <items xsi:type="CLUSTER" archetype_node_id="at0538">
+              <name>
+                <value>Fjernmetastaser</value>
+              </name>
+              <items xsi:type="ELEMENT" archetype_node_id="at0545">
+                <name>
+                  <value>Lokalisasjon av fjernmetastaser#1</value>
+                </name>
+                <value xsi:type="DV_CODED_TEXT">
+                  <value>Lunge</value>
+                  <defining_code>
+                    <terminology_id>
+                      <value>local</value>
+                    </terminology_id>
+                    <code_string>at0598</code_string>
+                  </defining_code>
+                </value>
+              </items>
+              <items xsi:type="ELEMENT" archetype_node_id="at0545">
+                <name>
+                  <value>Lokalisasjon av fjernmetastaser#2</value>
+                </name>
+                <value xsi:type="DV_CODED_TEXT">
+                  <value>Lymfeknuter utenfor regionalt område</value>
+                  <defining_code>
+                    <terminology_id>
+                      <value>local</value>
+                    </terminology_id>
+                    <code_string>at0606</code_string>
+                  </defining_code>
+                </value>
+              </items>
+              <items xsi:type="CLUSTER" archetype_node_id="at0546">
+                <name>
+                  <value>Utredsningsmetode for fjernmetastaser</value>
+                </name>
+                <items xsi:type="ELEMENT" archetype_node_id="at0747">
+                  <name>
+                    <value>Utredsningsmetode for fjernmetastaser#1</value>
+                  </name>
+                  <value xsi:type="DV_CODED_TEXT">
+                    <value>CT</value>
+                    <defining_code>
+                      <terminology_id>
+                        <value>local</value>
+                      </terminology_id>
+                      <code_string>at0750</code_string>
+                    </defining_code>
+                  </value>
+                </items>
+                <items xsi:type="ELEMENT" archetype_node_id="at0747">
+                  <name>
+                    <value>Utredsningsmetode for fjernmetastaser#2</value>
+                  </name>
+                  <value xsi:type="DV_CODED_TEXT">
+                    <value>PET</value>
+                    <defining_code>
+                      <terminology_id>
+                        <value>local</value>
+                      </terminology_id>
+                      <code_string>at0754</code_string>
+                    </defining_code>
+                  </value>
+                </items>
+                <items xsi:type="ELEMENT" archetype_node_id="at0551">
+                  <name>
+                    <value>Dato for utredning av metastaser</value>
+                  </name>
+                  <value xsi:type="DV_DATE">
+                    <value>2020-11-13</value>
+                  </value>
+                </items>
+              </items>
+            </items>
+            <items xsi:type="CLUSTER" archetype_node_id="at0401">
+              <name>
+                <value>Klinisk TNM etter ferdig primærutredning og før primærbehandling</value>
+              </name>
+              <items xsi:type="ELEMENT" archetype_node_id="at0402">
+                <name>
+                  <value>cT</value>
+                </name>
+                <value xsi:type="DV_TEXT">
+                  <value>0</value>
+                </value>
+              </items>
+              <items xsi:type="ELEMENT" archetype_node_id="at0403">
+                <name>
+                  <value>cN</value>
+                </name>
+                <value xsi:type="DV_TEXT">
+                  <value>0</value>
+                </value>
+              </items>
+              <items xsi:type="ELEMENT" archetype_node_id="at0404">
+                <name>
+                  <value>cM</value>
+                </name>
+                <value xsi:type="DV_TEXT">
+                  <value>1b</value>
+                </value>
+              </items>
+            </items>
+          </items>
+          <items xsi:type="CLUSTER" archetype_node_id="openEHR-EHR-CLUSTER.kreftmelding_kolorektal_cea_dips.v1">
+            <name>
+              <value>Cea</value>
+            </name>
+            <archetype_details>
+              <archetype_id>
+                <value>openEHR-EHR-CLUSTER.kreftmelding_kolorektal_cea_dips.v1</value>
+              </archetype_id>
+              <template_id>
+                <value>kreftmelding_utredning</value>
+              </template_id>
+              <rm_version>1.0.4</rm_version>
+            </archetype_details>
+            <items xsi:type="ELEMENT" archetype_node_id="at0001">
+              <name>
+                <value>CEA</value>
+              </name>
+              <value xsi:type="DV_QUANTITY">
+                <magnitude>12</magnitude>
+                <units>µg/L</units>
+              </value>
+            </items>
+          </items>
+          <items xsi:type="CLUSTER" archetype_node_id="openEHR-EHR-CLUSTER.kreftmelding_kolorektal_ecog_funksjonsstatus_dips.v1">
+            <name>
+              <value>Ecog funksjonsstatus</value>
+            </name>
+            <archetype_details>
+              <archetype_id>
+                <value>openEHR-EHR-CLUSTER.kreftmelding_kolorektal_ecog_funksjonsstatus_dips.v1</value>
+              </archetype_id>
+              <template_id>
+                <value>kreftmelding_utredning</value>
+              </template_id>
+              <rm_version>1.0.4</rm_version>
+            </archetype_details>
+            <items xsi:type="ELEMENT" archetype_node_id="at0001">
+              <name>
+                <value>ECOG funksjonsstatus</value>
+              </name>
+              <value xsi:type="DV_CODED_TEXT">
+                <value>1 - Oppegående</value>
+                <defining_code>
+                  <terminology_id>
+                    <value>local</value>
+                  </terminology_id>
+                  <code_string>at0003</code_string>
+                </defining_code>
+              </value>
+            </items>
+          </items>
+          <items xsi:type="CLUSTER" archetype_node_id="openEHR-EHR-CLUSTER.kreftmelding_kolorektal_patologilaboratorium_dips.v1">
+            <name>
+              <value>Patologilaboratorium</value>
+            </name>
+            <archetype_details>
+              <archetype_id>
+                <value>openEHR-EHR-CLUSTER.kreftmelding_kolorektal_patologilaboratorium_dips.v1</value>
+              </archetype_id>
+              <template_id>
+                <value>kreftmelding_utredning</value>
+              </template_id>
+              <rm_version>1.0.4</rm_version>
+            </archetype_details>
+            <items xsi:type="ELEMENT" archetype_node_id="at0001">
+              <name>
+                <value>Laboratorium</value>
+              </name>
+              <value xsi:type="DV_CODED_TEXT">
+                <value>Helse Fonna, Haugesund sjukehus</value>
+                <defining_code>
+                  <terminology_id>
+                    <value>local</value>
+                  </terminology_id>
+                  <code_string>at0006</code_string>
+                </defining_code>
+              </value>
+            </items>
+          </items>
+          <items xsi:type="CLUSTER" archetype_node_id="at0861">
+            <name>
+              <value>Oppfølging/tiltak</value>
+            </name>
+            <items xsi:type="ELEMENT" archetype_node_id="at0054">
+              <name>
+                <value>Oppfølging/tiltak</value>
+              </name>
+              <value xsi:type="DV_CODED_TEXT">
+                <value>Kun symptomlindrende behandling/Ingen tumorrettet behandling</value>
+                <defining_code>
+                  <terminology_id>
+                    <value>local</value>
+                  </terminology_id>
+                  <code_string>at0294</code_string>
+                </defining_code>
+              </value>
+            </items>
+          </items>
+        </data>
+      </events>
+    </data>
+  </content>
+</composition>
