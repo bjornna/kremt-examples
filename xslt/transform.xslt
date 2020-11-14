@@ -1,6 +1,11 @@
 <?xml version="1.0"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:o="http://schemas.openehr.org/v1" version="1.0">
-	<xsl:output method="xml" indent="yes"/>
+	<xsl:output method="xml" encoding="UTF-8"  indent="yes" />
+	<!-- 
+encoding="ISO-8859-1"
+
+
+	-->
 	<xsl:template match="*[@xsi:type = 'SECTION']">
 		<section>
 			<xsl:call-template name="parseParamName">
@@ -62,7 +67,7 @@ NOT USED
 <xsl:value-of select="@archetype_node_id"        />
         </xsl:variable>
         <xsl:variable name="elementName">
-<xsl:value-of select="./o:name/o:value"	/>
+
 		</xsl:variable>
 <!--    
 <xsl:element name="CLUSTER">
@@ -80,57 +85,8 @@ NOT USED
 	<xsl:variable name="nodeId">
 <xsl:value-of select="@archetype_node_id"        />
         </xsl:variable>
-        <xsl:element name="ELEMENT_{translate($nodeId,'.', '_')}"> 
-        		<xsl:choose>
-					<xsl:when test="o:value/@xsi:type = 'DV_QUANTITY'">
-						<xsl:value-of select="o:value/o:magnitude"/>
-						<xsl:value-of select="' '"/>
-						<xsl:value-of select="o:value/o:units"/>
-					</xsl:when>
-					<xsl:when test="o:value/@xsi:type = 'DV_TEXT'">
-						<xsl:value-of select="o:value"/>
-					</xsl:when>
-					<xsl:when test="o:value/@xsi:type = 'DV_CODED_TEXT'">
-						<xsl:value-of select="o:value/o:value"/>
-					</xsl:when>
-					<xsl:when test="o:value/@xsi:type = 'DV_BOOLEAN'">
-						<xsl:apply-templates select="o:value" mode="boolean"/>
-					</xsl:when>
-					<xsl:when test="o:value/@xsi:type = 'DV_DATE'">
-						<xsl:apply-templates select="o:value" mode="date"/>
-					</xsl:when>
-					<xsl:when test="o:value/@xsi:type = 'DV_DATE_TIME'">
-						<xsl:apply-templates select="o:value" mode="datetime"/>
-					</xsl:when>
-					<xsl:when test="o:value/@xsi:type = 'DV_PROPORTION'">
-						<!-- http://openehr.org/releases/1.0.2/architecture/rm/data_types_im.pdf -->
-						<xsl:variable name="kind" select="o:value/o:type"/>
-						<xsl:choose>
-							<xsl:when test="$kind = 1">
-								<xsl:value-of select="o:value/o:numerator"/>
-								<xsl:value-of select="'%'"/>
-							</xsl:when>
-							<xsl:when test="$kind = 2">
-								<xsl:value-of select="o:value/o:numerator"/>
-								<xsl:value-of select="'%'"/>
-							</xsl:when>
-							<xsl:otherwise>
-								<xsl:value-of select="o:value/o:numerator"/>
-								<xsl:value-of select="'/'"/>
-								<xsl:value-of select="o:value/o:denominator"/>
-							</xsl:otherwise>
-						</xsl:choose>
-					</xsl:when>
-					<xsl:when test="o:value/@xsi:type = 'DV_ORDINAL'">
-						<xsl:comment>
-							<xsl:value-of select="o:value/o:value"/>
-						</xsl:comment>
-						<xsl:value-of select="o:value/o:symbol/o:value"/>
-					</xsl:when>
-					<xsl:otherwise>
-						<xsl:value-of select="o:value"/>
-					</xsl:otherwise>
-				</xsl:choose>
+        <xsl:element name="{translate($nodeId,'.', '_')}"> 
+        		<xsl:copy-of select="./o:value"/>
         </xsl:element>
 		
 		
