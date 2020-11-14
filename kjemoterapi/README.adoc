@@ -1,0 +1,10 @@
+= Kolorektal Kjemoterapi 
+
+== Filer 
+
+* Primærsykdom - lokal/lokalavansert inkludert spredning til regionale lymfeknuter
+** kjemo01.xml
+** kjemo02.xml
+* Primærsykdom - avansert sykdom (fjernspredning)
+** kjemo03.xml
+

@@ -1,0 +1,14 @@
+=  kremt-examples
+
+== Background
+Eksempel på openEHR COMPOSITION til KREMT 
+
+
+== Developing
+XSLT is a mature technology. Suggest to use `xsltproc`. Download here: https://www.zlatkovic.com/pub/libxml/[] - , the file _libxslt-1.1.26.win32.zip_ . Mac/Linux users find a suitable installation format. 
+
+Usage: 
+
+----
+.\tools\bin\xsltproc.exe .\xslt\transform.xslt .\utredning\utredning01.xml  > test.xml
+----
