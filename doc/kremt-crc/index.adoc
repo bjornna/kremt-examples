@@ -1,0 +1,10 @@
+= KREMT CRC 
+
+== Bakgrunn 
+Dette dokumentet er teknisk dokumentasjon av templater for meldinger til det nasjonale tykk- og endetarmsregisteret 
+
+include::kremt_crc_kirurgi_v2.adoc[leveloffset=+1]
+
+include::kremt_crc_utredning.adoc[leveloffset=+1]
+
+include::kremt_crc_kjemoterapi_v2.adoc[leveloffset=+1]
