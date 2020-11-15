@@ -1,352 +1,381 @@
-= kremt_crc_utredning
-// Not supported rmType COMPOSITION
+= Kreftmelding kolorektalkreft dips
 
-== Kreftmelding kolorektalkreft utredning
-[options="header", cols="3,5,5,30"]
+
+== Metadata
+
+
+TemplateId:: kremt_crc_utredning
+
+
+Archetype:: openEHR-EHR-COMPOSITION.kreftmelding_kolorektalkreft_dips.v1
+
+
+
+
+// Not supported rmType COMPOSITION
+== EVENT_CONTEXT
+[options="header", cols="3,3,5,5,30"]
 |====
-|Attr.|RM Type| Navn |Beskrivelse
-| 0..1|DV_CODED_TEXT | Funn i utredning
-a|
-* Primærtumor (med eller uten metastase(r)) (local: at0450)
-* Lokal residiv (med eller uten metastase(r)) (local: at0451)
-* Kun metastase(r) (local: at0452)
-// Not supported rmType CLUSTER
-// Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | Lokalisajon
-a|
-* Colon (C18-C19) (local: at0002)
-* Rectum (C20) (local: at0003)
-| 0..1|DV_CODED_TEXT | Spesifiser lokalisajon Colon
-a|
-* Cøkum (C18.0) (local: at0006)
-* Appendix (C18.1) (local: at0007)
-* Ascendens (C18.2) (local: at0008)
-* Høyre fleksur (C18.3) (local: at0009)
-* Transversum (C18.4) (local: at0010)
-* Venstre fleksur (C18.5) (local: at0011)
-* Descendens (C18.6) (local: at0012)
-* Sigmoideum, ≥ 20 cm (C18.7) (local: at0013)
-* Tykktarm, overlappende (C18.8) (local: at0014)
-* Tykktarm uspesifisert (C18.9) (local: at0015)
-* Rectosigmoid ≥ 16 og < 20 cm (C19) (local: at0016)
-| 0..1|DV_QUANTITY | Angi avstand fra analåpning til nedre kant av tumor (målt på stivt skop)
+|NodeId|Attr.|RM Type| Navn |Beskrivelse
+|at0003| 0..1| DV_BOOLEAN | Klar til sending
 |
-| 0..1|DV_BOOLEAN | Ukjent
+
+
+Bruk av feltet gjør det mulig å sette dokumentet som _persistent_ og gjøre flere godkjenninger over tid. Dette kan være aktuelt for kirurgimeldingen hvor det ofte må samles inn informasjon over tid. 
+|at0002| 0..1| DV_TEXT | Meldingstype
+a|
+
+
+Settes av kode. 
+|====
+== Kreftmelding kolorektalkreft utredning
+[options="header", cols="3,3,5,5,30"]
+|====
+|NodeId|Attr.|RM Type| Navn |Beskrivelse
+|at0337| 0..1| DV_CODED_TEXT | Funn i utredning
+a|
+* at0450 -> Primærtumor (med eller uten metastase(r)) 
+* at0451 -> Lokal residiv (med eller uten metastase(r)) 
+* at0452 -> Kun metastase(r) 
+
+
+Hvis FunnUtredning = 1, sette MeldingsNr til 100, hvis FunnUtredning = 2, settes MeldingsNr = 150 og hvis FunnUtredning = 3, settes MeldingsNr = 199
+Nullstiller felt som vises/skjules på bakgrunn av valg i lista
+// Not supported rmType CLUSTER
+// Not supported rmType CLUSTER
+|at0001| 0..1| DV_CODED_TEXT | Lokalisajon
+a|
+* at0002 -> Colon (C18-C19) 
+* at0003 -> Rectum (C20) 
+|at0004| 0..1| DV_CODED_TEXT | Spesifiser lokalisajon Colon
+a|
+* at0006 -> Cøkum (C18.0) 
+* at0007 -> Appendix (C18.1) 
+* at0008 -> Ascendens (C18.2) 
+* at0009 -> Høyre fleksur (C18.3) 
+* at0010 -> Transversum (C18.4) 
+* at0011 -> Venstre fleksur (C18.5) 
+* at0012 -> Descendens (C18.6) 
+* at0013 -> Sigmoideum, ≥ 20 cm (C18.7) 
+* at0014 -> Tykktarm, overlappende (C18.8) 
+* at0015 -> Tykktarm uspesifisert (C18.9) 
+* at0016 -> Rectosigmoid ≥ 16 og < 20 cm (C19) 
+|at0026| 0..1| DV_QUANTITY | Angi avstand fra analåpning til nedre kant av tumor (målt på stivt skop)
 |
-| 0..1|DV_QUANTITY | Avstand fra øvre kant av M.puborektalis til nedre kant av tumor (målt ved MR)
+|at0033| 0..1| DV_BOOLEAN | Ukjent
 |
-| 0..1|DV_BOOLEAN | Ukjent
+|at0034| 0..1| DV_QUANTITY | Avstand fra øvre kant av M.puborektalis til nedre kant av tumor (målt ved MR)
 |
-| 0..1|DV_CODED_TEXT | Klinisk sikker kreft
-a|
-* Ja (local: at0022)
-* Usikker (local: at0023)
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Tumor Colon
-a|
-* TX - Ingen informasjon (local: at0666)
-* T0 - Tumor ikke påvist (local: at0668)
-* Tis - Carsinoma in situ (local: at0670)
-* T1 - Tumor vokser inn i submucosa (local: at0672)
-* T2 - Tumor vokser inn i muscularis propria (local: at0674)
-* T1-T2 -Tumor vokser inn i submucosa eller muscularis propria (local: at0862)
-* T3 - Tumor vokser inn i subserosa eller ikke-peritonealisert pericolisk vev (local: at0676)
-* T4 - Tumor vokser direkte inn i andre organer eller strukturer (local: at0678)
-| 0..*|DV_CODED_TEXT | Tumor Rectum
-a|
-* TX - Ingen informasjon (local: at0681)
-* T0 - Tumor ikke påvist (local: at0683)
-* Tis - Carsinoma in situ (local: at0685)
-* T1 - Tumor vokser inn i submucosa (local: at0687)
-* T2 - Tumor vokser inn i muscularis propria (local: at0689)
-* T3 - Tumor vokser inn i subserosa eller ikke-peritonealisert pericolisk vev (local: at0691)
-* T4a - Tumor perforerer viscerale peritoneum (local: at0693)
-* T4b - Tumor vokser direkte inn i andre organer eller strukturer (local: at0695)
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Utredningsmetode
-a|
-* Biopsi (local: at0698)
-* Polypectomi (local: at0700)
-* Colo-/rectoskopi (local: at0702)
-* Rtg colon (local: at0704)
-* MR (local: at0706)
-* CT abdomen (local: at0708)
-* Colografi (CT) (local: at0710)
-* Ultralyd (local: at0712)
-* Annet (local: at0714)
-* Ukjent (local: at0716)
-| 0..1|DV_TEXT | Spesifiser
-a|
-| 0..1|DV_DATE | Dato sykdommen ble bekreftet
+|at0032| 0..1| DV_BOOLEAN | Ukjent
 |
-| 0..1|DV_QUANTITY | Antatt avstand fra tumor/malignsuspekt lymfeknute/tumordeposit til mesorectale fascie, unntatt peritoneum (mm)
+|at0021| 0..1| DV_CODED_TEXT | Klinisk sikker kreft
+a|
+* at0022 -> Ja 
+* at0023 -> Usikker 
+// Not supported rmType CLUSTER
+|at0665| 0..*| DV_CODED_TEXT | Tumor Colon
+a|
+* at0666 -> TX - Ingen informasjon 
+* at0668 -> T0 - Tumor ikke påvist 
+* at0670 -> Tis - Carsinoma in situ 
+* at0672 -> T1 - Tumor vokser inn i submucosa 
+* at0674 -> T2 - Tumor vokser inn i muscularis propria 
+* at0862 -> T1-T2 -Tumor vokser inn i submucosa eller muscularis propria 
+* at0676 -> T3 - Tumor vokser inn i subserosa eller ikke-peritonealisert pericolisk vev 
+* at0678 -> T4 - Tumor vokser direkte inn i andre organer eller strukturer 
+|at0680| 0..*| DV_CODED_TEXT | Tumor Rectum
+a|
+* at0681 -> TX - Ingen informasjon 
+* at0683 -> T0 - Tumor ikke påvist 
+* at0685 -> Tis - Carsinoma in situ 
+* at0687 -> T1 - Tumor vokser inn i submucosa 
+* at0689 -> T2 - Tumor vokser inn i muscularis propria 
+* at0691 -> T3 - Tumor vokser inn i subserosa eller ikke-peritonealisert pericolisk vev 
+* at0693 -> T4a - Tumor perforerer viscerale peritoneum 
+* at0695 -> T4b - Tumor vokser direkte inn i andre organer eller strukturer 
+// Not supported rmType CLUSTER
+|at0697| 0..*| DV_CODED_TEXT | Utredningsmetode
+a|
+* at0698 -> Biopsi 
+* at0700 -> Polypectomi 
+* at0702 -> Colo-/rectoskopi 
+* at0704 -> Rtg colon 
+* at0706 -> MR 
+* at0708 -> CT abdomen 
+* at0710 -> Colografi (CT) 
+* at0712 -> Ultralyd 
+* at0714 -> Annet 
+* at0716 -> Ukjent 
+|at0438| 0..1| DV_TEXT | Spesifiser
+a|
+|at0015| 0..1| DV_DATE | Dato sykdommen ble bekreftet
 |
-| 0..1|DV_BOOLEAN | Ukjent
+|at0564| 0..1| DV_QUANTITY | Antatt avstand fra tumor/malignsuspekt lymfeknute/tumordeposit til mesorectale fascie, unntatt peritoneum (mm)
 |
-| 0..1|DV_CODED_TEXT | Er regionale lymfeknutemetastaser påvist (N-sykdom)?
-a|
-* Ja (local: at0345)
-* Nei (local: at0346)
-* Ikke undersøkt (local: at0347)
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | N-status Colon
-a|
-* N1 - Metastase til 1-3 regionale lymfeknuter (local: at0836)
-* N2 - Metastase til 4 eller flere regionale lymfeknuter (local: at0838)
-| 0..*|DV_CODED_TEXT | N-status Rectum
-a|
-* N1a - Metastase til 1 regional lymfeknute (local: at0844)
-* N1b - Metastase til 2-3 regionale lymfeknuter (local: at0846)
-* N1c - Tumorknute(r) (satelitt(er)) i subserosa eller i ikke-peritonealisert pericolisk bløtvev uten regional(e) lymfeknutemetastase(r) (local: at0848)
-* N2 - Metastase til 4 eller flere regionale lymfeknuter (local: at0850)
-| 0..1|DV_CODED_TEXT | Antatt maligne lymfeknuter på bekkenvegg/ utenfor MRF(mesorectal fascie)
-a|
-* Ja (local: at0385)
-* Nei (local: at0386)
-* Ukjent (local: at0387)
-| 0..1|DV_CODED_TEXT | Ekstramural karinnvekst
-a|
-* Ja (local: at0388)
-* Nei (local: at0389)
-* Ukjent (local: at0390)
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Utredningsmetode
-a|
-* Ultralyd (local: at0733)
-* CT (local: at0735)
-* MR (local: at0737)
-* Cytologi (local: at0739)
-* Biopsi (local: at0741)
-* Annet (local: at0743)
-* Ukjent (local: at0745)
-| 0..1|DV_TEXT | Spesifiser
-a|
-| 0..1|DV_CODED_TEXT | Er fjernmetastaser påvist, inkludert lymfeknutemetastaser utenfor regionalt område (M-sykdom)?
-a|
-* Ja (local: at0413)
-* Nei (local: at0414)
-* Ikke undersøkt (local: at0415)
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Lokalisasjon av fjernmetastaser
-a|
-* Lever (local: at0596)
-* Lunge (local: at0598)
-* Peritoneum/peritoneal carcinomatose (local: at0600)
-* Skjelett (local: at0602)
-* Hjerne (local: at0604)
-* Lymfeknuter utenfor regionalt område (local: at0606)
-* Annen lokalisasjon (local: at0608)
-| 0..1|DV_TEXT | Spesifiser
-a|
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Utredsningsmetode for fjernmetastaser
-a|
-* Ultralyd (local: at0748)
-* CT (local: at0750)
-* MR (local: at0752)
-* PET (local: at0754)
-* Rtg thorax (local: at0756)
-* Cytologi (local: at0758)
-* Biopsi (local: at0760)
-* Annet (local: at0762)
-* Ukjent (local: at0764)
-| 0..1|DV_TEXT | Spesifiser
-a|
-| 0..1|DV_DATE | Dato for utredning av metastaser
+|at0408| 0..1| DV_BOOLEAN | Ukjent
 |
+|at0344| 0..1| DV_CODED_TEXT | Er regionale lymfeknutemetastaser påvist (N-sykdom)?
+a|
+* at0345 -> Ja 
+* at0346 -> Nei 
+* at0347 -> Ikke undersøkt 
 // Not supported rmType CLUSTER
-| 0..1|DV_TEXT | cT
+|at0832| 0..*| DV_CODED_TEXT | N-status Colon
 a|
-| 0..1|DV_TEXT | cN
+* at0836 -> N1 - Metastase til 1-3 regionale lymfeknuter 
+* at0838 -> N2 - Metastase til 4 eller flere regionale lymfeknuter 
+|at0833| 0..*| DV_CODED_TEXT | N-status Rectum
 a|
-| 0..1|DV_TEXT | cM
+* at0844 -> N1a - Metastase til 1 regional lymfeknute 
+* at0846 -> N1b - Metastase til 2-3 regionale lymfeknuter 
+* at0848 -> N1c - Tumorknute(r) (satelitt(er)) i subserosa eller i ikke-peritonealisert pericolisk bløtvev uten regional(e) lymfeknutemetastase(r) 
+* at0850 -> N2 - Metastase til 4 eller flere regionale lymfeknuter 
+|at0383| 0..1| DV_CODED_TEXT | Antatt maligne lymfeknuter på bekkenvegg/ utenfor MRF(mesorectal fascie)
 a|
+* at0385 -> Ja 
+* at0386 -> Nei 
+* at0387 -> Ukjent 
+|at0384| 0..1| DV_CODED_TEXT | Ekstramural karinnvekst
+a|
+* at0388 -> Ja 
+* at0389 -> Nei 
+* at0390 -> Ukjent 
 // Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | I anastomosen?
+|at0732| 0..*| DV_CODED_TEXT | Utredningsmetode
 a|
-* Ja (local: at0208)
-* Nei (local: at0209)
+* at0733 -> Ultralyd 
+* at0735 -> CT 
+* at0737 -> MR 
+* at0739 -> Cytologi 
+* at0741 -> Biopsi 
+* at0743 -> Annet 
+* at0745 -> Ukjent 
+|at0466| 0..1| DV_TEXT | Spesifiser
+a|
+|at0348| 0..1| DV_CODED_TEXT | Er fjernmetastaser påvist, inkludert lymfeknutemetastaser utenfor regionalt område (M-sykdom)?
+a|
+* at0413 -> Ja 
+* at0414 -> Nei 
+* at0415 -> Ikke undersøkt 
 // Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Utredningsmetode
+|at0545| 0..*| DV_CODED_TEXT | Lokalisasjon av fjernmetastaser
 a|
-* Biopsi (local: at0489)
-* Polypectomi (local: at0490)
-* Colo-/rectoskopi (local: at0491)
-* Rtg colon (local: at0492)
-* MR (local: at0493)
-* Ct abdomen (local: at0494)
-* Colografi (CT) (local: at0495)
-* Ultralyd (local: at0496)
-* Annet (local: at0497)
-* Ukjent (local: at0498)
-| 0..1|DV_TEXT | Spesifiser
-a|
-| 0..1|DV_DATE | Dato lokalt residiv/progresjon ble bekreftet
-|
-| 0..1|DV_CODED_TEXT | Er regionale lymfeknutemetastaser påvist(N-sykdom)?
-a|
-* Ja (local: at0417)
-* Nei (local: at0418)
-* Ikke undersøkt (local: at0419)
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | N-status Colon
-a|
-* N1 - Metastase til 1-3 regionale lymfeknuter (local: at0840)
-* N2 - Metastase til 4 eller flere regionale lymfeknuter (local: at0842)
-| 0..*|DV_CODED_TEXT | N-status Rectum
-a|
-* N1a - Metastase til 1 regional lymfeknute (local: at0852)
-* N1b - Metastase til 2-3 regionale lymfeknuter (local: at0854)
-* N1c - Tumorknute(r) (satelitt(er)) i subserosa eller i ikke-peritonealisert pericolisk bløtvev uten regional(e) lymfeknutemetastase(r) (local: at0856)
-* N2 - Metastase til 4 eller flere regionale lymfeknuter (local: at0858)
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Utredningsmetode
-a|
-* Ultralyd (local: at0781)
-* CT (local: at0783)
-* MR (local: at0785)
-* Cytologi (local: at0787)
-* Biopsi (local: at0789)
-* Annet (local: at0791)
-* Ukjent (local: at0793)
-| 0..1|DV_TEXT | Spesifiser
-a|
-| 0..1|DV_CODED_TEXT | Er fjernmetastaser påvist, inkludert lymfeknutemetastaser utenfor regionalt område (M-sykdom)?
-a|
-* Ja (local: at0662)
-* Nei (local: at0663)
-* Ikke undersøkt (local: at0664)
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Lokalisasjon av fjernmetastaser
-a|
-* Lever (local: at0655)
-* Lunge (local: at0656)
-* Peritoneum/peritoneal carcinomatose (local: at0657)
-* Skjelett (local: at0658)
-* Hjerne (local: at0659)
-* Lymfeknuter utenfor regionalt område (local: at0660)
-* Annen lokalisasjon (local: at0661)
-| 0..1|DV_TEXT | Spesifiser
+* at0596 -> Lever 
+* at0598 -> Lunge 
+* at0600 -> Peritoneum/peritoneal carcinomatose 
+* at0602 -> Skjelett 
+* at0604 -> Hjerne 
+* at0606 -> Lymfeknuter utenfor regionalt område 
+* at0608 -> Annen lokalisasjon 
+|at0610| 0..1| DV_TEXT | Spesifiser
 a|
 // Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Utredningsmetode for fjernmetastaser
+|at0747| 0..*| DV_CODED_TEXT | Utredsningsmetode for fjernmetastaser
 a|
-* Ultralyd (local: at0796)
-* CT (local: at0798)
-* MR (local: at0800)
-* PET (local: at0802)
-* Rtg thorax (local: at0804)
-* Cytologi (local: at0806)
-* Biopsi (local: at0808)
-* Annet (local: at0810)
-* Ukjent (local: at0812)
-| 0..1|DV_TEXT | Spesifiser
+* at0748 -> Ultralyd 
+* at0750 -> CT 
+* at0752 -> MR 
+* at0754 -> PET 
+* at0756 -> Rtg thorax 
+* at0758 -> Cytologi 
+* at0760 -> Biopsi 
+* at0762 -> Annet 
+* at0764 -> Ukjent 
+|at0550| 0..1| DV_TEXT | Spesifiser
 a|
-| 0..1|DV_DATE | Dato for utredning av metastaser
+|at0551| 0..1| DV_DATE | Dato for utredning av metastaser
 |
 // Not supported rmType CLUSTER
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Metastaser lokalisasjon
+|at0402| 0..1| DV_TEXT | cT
 a|
-* Lever (local: at0515)
-* Lunge (local: at0516)
-* Peritoneum/peritoneal caecinomatose (local: at0517)
-* Skjelett (local: at0518)
-* Hjerne (local: at0519)
-* Lymfeknuter utenfor regionalt området (local: at0520)
-* Annen lokalisasjon (local: at0521)
-| 0..1|DV_TEXT | Spesifiser
+|at0403| 0..1| DV_TEXT | cN
+a|
+|at0404| 0..1| DV_TEXT | cM
 a|
 // Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Utredningsmetode
+|at0026| 0..1| DV_CODED_TEXT | I anastomosen?
 a|
-* Ultralyd (local: at0815)
-* CT (local: at0817)
-* MR (local: at0819)
-* PET (local: at0821)
-* Rtg thorax (local: at0823)
-* Cytologi (local: at0825)
-* Biopsi (local: at0827)
-* Annet (local: at0829)
-* Ukjent (local: at0831)
-| 0..1|DV_TEXT | Spesifiser
+* at0208 -> Ja 
+* at0209 -> Nei 
+// Not supported rmType CLUSTER
+|at0488| 0..*| DV_CODED_TEXT | Utredningsmetode
 a|
-| 0..*|DV_DATE | Dato for utredning av metastaser
+* at0489 -> Biopsi 
+* at0490 -> Polypectomi 
+* at0491 -> Colo-/rectoskopi 
+* at0492 -> Rtg colon 
+* at0493 -> MR 
+* at0494 -> Ct abdomen 
+* at0495 -> Colografi (CT) 
+* at0496 -> Ultralyd 
+* at0497 -> Annet 
+* at0498 -> Ukjent 
+|at0449| 0..1| DV_TEXT | Spesifiser
+a|
+|at0027| 0..1| DV_DATE | Dato lokalt residiv/progresjon ble bekreftet
+|
+|at0412| 0..1| DV_CODED_TEXT | Er regionale lymfeknutemetastaser påvist(N-sykdom)?
+a|
+* at0417 -> Ja 
+* at0418 -> Nei 
+* at0419 -> Ikke undersøkt 
+// Not supported rmType CLUSTER
+|at0834| 0..*| DV_CODED_TEXT | N-status Colon
+a|
+* at0840 -> N1 - Metastase til 1-3 regionale lymfeknuter 
+* at0842 -> N2 - Metastase til 4 eller flere regionale lymfeknuter 
+|at0835| 0..*| DV_CODED_TEXT | N-status Rectum
+a|
+* at0852 -> N1a - Metastase til 1 regional lymfeknute 
+* at0854 -> N1b - Metastase til 2-3 regionale lymfeknuter 
+* at0856 -> N1c - Tumorknute(r) (satelitt(er)) i subserosa eller i ikke-peritonealisert pericolisk bløtvev uten regional(e) lymfeknutemetastase(r) 
+* at0858 -> N2 - Metastase til 4 eller flere regionale lymfeknuter 
+// Not supported rmType CLUSTER
+|at0780| 0..*| DV_CODED_TEXT | Utredningsmetode
+a|
+* at0781 -> Ultralyd 
+* at0783 -> CT 
+* at0785 -> MR 
+* at0787 -> Cytologi 
+* at0789 -> Biopsi 
+* at0791 -> Annet 
+* at0793 -> Ukjent 
+|at0625| 0..1| DV_TEXT | Spesifiser
+a|
+|at0627| 0..1| DV_CODED_TEXT | Er fjernmetastaser påvist, inkludert lymfeknutemetastaser utenfor regionalt område (M-sykdom)?
+a|
+* at0662 -> Ja 
+* at0663 -> Nei 
+* at0664 -> Ikke undersøkt 
+// Not supported rmType CLUSTER
+|at0629| 0..*| DV_CODED_TEXT | Lokalisasjon av fjernmetastaser
+a|
+* at0655 -> Lever 
+* at0656 -> Lunge 
+* at0657 -> Peritoneum/peritoneal carcinomatose 
+* at0658 -> Skjelett 
+* at0659 -> Hjerne 
+* at0660 -> Lymfeknuter utenfor regionalt område 
+* at0661 -> Annen lokalisasjon 
+|at0630| 0..1| DV_TEXT | Spesifiser
+a|
+// Not supported rmType CLUSTER
+|at0795| 0..*| DV_CODED_TEXT | Utredningsmetode for fjernmetastaser
+a|
+* at0796 -> Ultralyd 
+* at0798 -> CT 
+* at0800 -> MR 
+* at0802 -> PET 
+* at0804 -> Rtg thorax 
+* at0806 -> Cytologi 
+* at0808 -> Biopsi 
+* at0810 -> Annet 
+* at0812 -> Ukjent 
+|at0640| 0..1| DV_TEXT | Spesifiser
+a|
+|at0641| 0..1| DV_DATE | Dato for utredning av metastaser
 |
 // Not supported rmType CLUSTER
-| 0..1|DV_QUANTITY | CEA
-|
-| 0..1|DV_BOOLEAN | Ikke tatt
-|
 // Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | ECOG funksjonsstatus
+|at0514| 0..*| DV_CODED_TEXT | Metastaser lokalisasjon
 a|
-* 0 - Full daglig aktivitet (local: at0002)
-* 1 - Oppegående (local: at0003)
-* 2 - Sengeliggende < 50 % av dagtid (local: at0004)
-* 3 - Sengeliggende > 50 % av dagtid (local: at0005)
-* 4 - Helt sengeliggende (local: at0006)
-* Ukjent (local: at0007)
-// Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | Laboratorium
-a|
-* AHUS, Akershus universitetssykehus (local: at0002)
-* Fürst Patologi (local: at0003)
-* Gyn Lab A/S (local: at0004)
-* Gades Institutt, Haukeland universitetssjukehus (local: at0005)
-* Helse Fonna, Haugesund sjukehus (local: at0006)
-* Helse Førde, Førde sjukehus (local: at0007)
-* Helse Møre og Romsdal, Molde sjukehus (local: at0008)
-* Helse Sunnmøre, Ålesund sjukehus (local: at0009)
-* Nordlandssykehuset, Bodø (local: at0010)
-* Oslo universitetssykehus, Aker (local: at0011)
-* Oslo universitetssykehus, Radiumhospitalet (local: at0012)
-* Oslo universitetssykehus, Rikshospitalet (local: at0013)
-* Oslo universitetssykehus, Ullevål (local: at0014)
-* Stavanger universitetssjukehus (local: at0015)
-* St. Olavs Hospital (local: at0016)
-* Sykehuset Innlandet, Lillehammer (local: at0017)
-* Sykehuset i Telemark, Skien (local: at0018)
-* Sykehuset i Vestfold, Tønsberg (local: at0019)
-* Sykehuset Østfold, Kalnes (local: at0020)
-* Sørlandet sykehus, Arendal (local: at0021)
-* Sørlandet sykehus, Kristiansand (local: at0022)
-* UNN, Universitetssykehuset i Nord-Norge (local: at0023)
-* Vestre Viken HF, Sykehuset Buskerud, Drammen (local: at0024)
-* Annet laboratorium (local: at0025)
-* Ukjent (local: at0026)
-| 0..1|DV_BOOLEAN | Ikke relevant
-|
-| 0..1|DV_TEXT | Spesifiser
-a|
-| 0..1|DV_TEXT | Preparatnummer
+* at0515 -> Lever 
+* at0516 -> Lunge 
+* at0517 -> Peritoneum/peritoneal caecinomatose 
+* at0518 -> Skjelett 
+* at0519 -> Hjerne 
+* at0520 -> Lymfeknuter utenfor regionalt området 
+* at0521 -> Annen lokalisasjon 
+|at0400| 0..1| DV_TEXT | Spesifiser
 a|
 // Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | Oppfølging/tiltak
+|at0814| 0..*| DV_CODED_TEXT | Utredningsmetode
 a|
-* Direkte til reseksjon (local: at0290)
-* Forbehandling før planlagt reseksjon (local: at0291)
-* Palliativ, tumorrettet behandling (onkolog) (local: at0292)
-* Palliativ, kirurgisk behandling (eksklusiv reseksjon) (local: at0293)
-* Kun symptomlindrende behandling/Ingen tumorrettet behandling (local: at0294)
-* Ikke avklart (local: at0423)
-* Ukjent (local: at0424)
-| 0..1|DV_CODED_TEXT | Hvor skjer neste trinn i behandlingen
+* at0815 -> Ultralyd 
+* at0817 -> CT 
+* at0819 -> MR 
+* at0821 -> PET 
+* at0823 -> Rtg thorax 
+* at0825 -> Cytologi 
+* at0827 -> Biopsi 
+* at0829 -> Annet 
+* at0831 -> Ukjent 
+|at0373| 0..1| DV_TEXT | Spesifiser
 a|
-* Eget sykehus (local: at0300)
-* Onkologisk avdeling annet sykehus (local: at0301)
-* Kirurgisk avdeling annet sykehus (local: at0302)
-* Primærhelsetjenesten (local: at0303)
+|at0427| 0..*| DV_DATE | Dato for utredning av metastaser
+|
 // Not supported rmType CLUSTER
-| 0..1|DV_DATE | Meldedato
+|at0001| 0..1| DV_QUANTITY | CEA
 |
-| 0..1|DV_TEXT | Melders navn
-a|
-| 0..1|DV_TEXT | Melder ID
-a|
-| 1..1|DV_DATE_TIME | Time
+|at0002| 0..1| DV_BOOLEAN | Ikke tatt
 |
+// Not supported rmType CLUSTER
+|at0001| 0..1| DV_CODED_TEXT | ECOG funksjonsstatus
+a|
+* at0002 -> 0 - Full daglig aktivitet 
+* at0003 -> 1 - Oppegående 
+* at0004 -> 2 - Sengeliggende < 50 % av dagtid 
+* at0005 -> 3 - Sengeliggende > 50 % av dagtid 
+* at0006 -> 4 - Helt sengeliggende 
+* at0007 -> Ukjent 
+// Not supported rmType CLUSTER
+|at0001| 0..1| DV_CODED_TEXT | Laboratorium
+a|
+* at0002 -> AHUS, Akershus universitetssykehus 
+* at0003 -> Fürst Patologi 
+* at0004 -> Gyn Lab A/S 
+* at0005 -> Gades Institutt, Haukeland universitetssjukehus 
+* at0006 -> Helse Fonna, Haugesund sjukehus 
+* at0007 -> Helse Førde, Førde sjukehus 
+* at0008 -> Helse Møre og Romsdal, Molde sjukehus 
+* at0009 -> Helse Sunnmøre, Ålesund sjukehus 
+* at0010 -> Nordlandssykehuset, Bodø 
+* at0011 -> Oslo universitetssykehus, Aker 
+* at0012 -> Oslo universitetssykehus, Radiumhospitalet 
+* at0013 -> Oslo universitetssykehus, Rikshospitalet 
+* at0014 -> Oslo universitetssykehus, Ullevål 
+* at0015 -> Stavanger universitetssjukehus 
+* at0016 -> St. Olavs Hospital 
+* at0017 -> Sykehuset Innlandet, Lillehammer 
+* at0018 -> Sykehuset i Telemark, Skien 
+* at0019 -> Sykehuset i Vestfold, Tønsberg 
+* at0020 -> Sykehuset Østfold, Kalnes 
+* at0021 -> Sørlandet sykehus, Arendal 
+* at0022 -> Sørlandet sykehus, Kristiansand 
+* at0023 -> UNN, Universitetssykehuset i Nord-Norge 
+* at0024 -> Vestre Viken HF, Sykehuset Buskerud, Drammen 
+* at0025 -> Annet laboratorium 
+* at0026 -> Ukjent 
+|at0027| 0..1| DV_BOOLEAN | Ikke relevant
+|
+|at0028| 0..1| DV_TEXT | Spesifiser
+a|
+|at0029| 0..1| DV_TEXT | Preparatnummer
+a|
+// Not supported rmType CLUSTER
+|at0054| 0..1| DV_CODED_TEXT | Oppfølging/tiltak
+a|
+* at0290 -> Direkte til reseksjon 
+* at0291 -> Forbehandling før planlagt reseksjon 
+* at0292 -> Palliativ, tumorrettet behandling (onkolog) 
+* at0293 -> Palliativ, kirurgisk behandling (eksklusiv reseksjon) 
+* at0294 -> Kun symptomlindrende behandling/Ingen tumorrettet behandling 
+* at0423 -> Ikke avklart 
+* at0424 -> Ukjent 
+|at0055| 0..1| DV_CODED_TEXT | Hvor skjer neste trinn i behandlingen
+a|
+* at0300 -> Eget sykehus 
+* at0301 -> Onkologisk avdeling annet sykehus 
+* at0302 -> Kirurgisk avdeling annet sykehus 
+* at0303 -> Primærhelsetjenesten 
+// Not supported rmType CLUSTER
+|at0001| 0..1| DV_DATE | Meldedato
+|
+|at0002| 0..1| DV_TEXT | Melders navn
+a|
+|at0003| 0..1| DV_TEXT | Melder ID
+a|
+|====
 // Not supported rmType CODE_PHRASE
 // Not supported rmType CODE_PHRASE
 // Not supported rmType PARTY_PROXY
-|====

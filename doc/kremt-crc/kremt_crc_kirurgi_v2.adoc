@@ -1,320 +1,334 @@
-= kremt_crc_kirurgi_v2
+= Kreftmelding kolorektalkreft dips
+
+
+== Metadata
+
+
+TemplateId:: kremt_crc_kirurgi_v2
+
+
+Archetype:: openEHR-EHR-COMPOSITION.kreftmelding_kolorektalkreft_dips.v1
+
+
+
+
 // Not supported rmType COMPOSITION
-// Not supported rmType EVENT_CONTEXT
-
+== EVENT_CONTEXT
+[options="header", cols="3,3,5,5,30"]
+|====
+|NodeId|Attr.|RM Type| Navn |Beskrivelse
+|at0003| 0..1| DV_BOOLEAN | Klar til sending
+|
+|at0002| 0..1| DV_TEXT | Meldingstype
+a|
+|====
 == Kolorektal kreftmelding for kirurgi
-[options="header", cols="3,5,5,30"]
+[options="header", cols="3,3,5,5,30"]
 |====
-|Attr.|RM Type| Navn |Beskrivelse
-| 0..1|DV_CODED_TEXT | Behandlingen var rettet mot
+|NodeId|Attr.|RM Type| Navn |Beskrivelse
+|at0004| 0..1| DV_CODED_TEXT | Behandlingen var rettet mot
 a|
-* Primærtumor (med eller uten metastase(r)) (local: at0005)
-* Lokalt residiv (med eller uten metastase(r)) (local: at0006)
-* Kun metastase(r) (local: at0007)
+* at0005 -> Primærtumor (med eller uten metastase(r)) 
+* at0006 -> Lokalt residiv (med eller uten metastase(r)) 
+* at0007 -> Kun metastase(r) 
 // Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | Lokalisajon
+|at0001| 0..1| DV_CODED_TEXT | Lokalisajon
 a|
-* Colon (C18-C19) (local: at0002)
-* Rectum (C20) (local: at0003)
-| 0..1|DV_CODED_TEXT | Spesifiser lokalisajon Colon
+* at0002 -> Colon (C18-C19) 
+* at0003 -> Rectum (C20) 
+|at0004| 0..1| DV_CODED_TEXT | Spesifiser lokalisajon Colon
 a|
-* Cøkum (C18.0) (local: at0006)
-* Appendix (C18.1) (local: at0007)
-* Ascendens (C18.2) (local: at0008)
-* Høyre fleksur (C18.3) (local: at0009)
-* Transversum (C18.4) (local: at0010)
-* Venstre fleksur (C18.5) (local: at0011)
-* Descendens (C18.6) (local: at0012)
-* Sigmoideum, ≥ 20 cm (C18.7) (local: at0013)
-* Tykktarm, overlappende (C18.8) (local: at0014)
-* Tykktarm uspesifisert (C18.9) (local: at0015)
-* Rectosigmoid ≥ 16 og < 20 cm (C19) (local: at0016)
-| 0..1|DV_QUANTITY | Angi avstand fra analåpning til nedre kant av tumor (målt på stivt skop)
+* at0006 -> Cøkum (C18.0) 
+* at0007 -> Appendix (C18.1) 
+* at0008 -> Ascendens (C18.2) 
+* at0009 -> Høyre fleksur (C18.3) 
+* at0010 -> Transversum (C18.4) 
+* at0011 -> Venstre fleksur (C18.5) 
+* at0012 -> Descendens (C18.6) 
+* at0013 -> Sigmoideum, ≥ 20 cm (C18.7) 
+* at0014 -> Tykktarm, overlappende (C18.8) 
+* at0015 -> Tykktarm uspesifisert (C18.9) 
+* at0016 -> Rectosigmoid ≥ 16 og < 20 cm (C19) 
+|at0026| 0..1| DV_QUANTITY | Angi avstand fra analåpning til nedre kant av tumor (målt på stivt skop)
 |
-| 0..1|DV_BOOLEAN | Ukjent
+|at0033| 0..1| DV_BOOLEAN | Ukjent
 |
-| 0..1|DV_QUANTITY | Avstand fra øvre kant av M.puborektalis til nedre kant av tumor (målt ved MR)
+|at0034| 0..1| DV_QUANTITY | Avstand fra øvre kant av M.puborektalis til nedre kant av tumor (målt ved MR)
 |
-| 0..1|DV_BOOLEAN | Ukjent
+|at0032| 0..1| DV_BOOLEAN | Ukjent
 |
-| 0..1|DV_CODED_TEXT | Klinisk sikker kreft
+|at0021| 0..1| DV_CODED_TEXT | Klinisk sikker kreft
 a|
-* Ja (local: at0022)
-* Usikker (local: at0023)
+* at0022 -> Ja 
+* at0023 -> Usikker 
 // Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Forbehandling
+|at0259| 0..*| DV_CODED_TEXT | Forbehandling
 a|
-* Ingen (local: at0260)
-* Kjemoterapi (local: at0261)
-* Strålebehandling (local: at0262)
-* Strålebehandling med kjemoterapi (local: at0263)
-* Avlastende stomi (local: at0264)
-* Stenting (local: at0265)
-* Annet (local: at0266)
-* Ukjent (local: at0267)
-| 0..1|DV_TEXT | Spesifiser forbehandling annet
-a|
-// Not supported rmType CLUSTER
-| 1..1|DV_CODED_TEXT | Siktemål for behandlingen/preoperativ intensjon
-a|
-* Kurativ (local: at0025)
-* Palliativ (local: at0026)
-* Ikke avklart (local: at0027)
-// Not supported rmType CLUSTER
-// Not supported rmType CLUSTER
-| 1..1|DV_CODED_TEXT | Hastegrad
-a|
-* Elektiv (local: at0030)
-* Akutt pga obstruksjon (local: at0031)
-* Akutt pga perforasjon (local: at0032)
-* Akutt pga annet (local: at0033)
-| 0..1|DV_TEXT | Spesifiser hastegrad annet
-a|
-| 0..1|DV_CODED_TEXT | ASA-score
-a|
-* I - Frisk pasient (local: at0036)
-* II - Pasient med mild systemsykdom (local: at0037)
-* III - Pasient med alvorlig systemsykdom som ikke gir nedsatt funksjon (local: at0038)
-* IV - Pasient med alvorlig systemsykdom som er livstruende (local: at0039)
-* V - Moribund pasient som ikke vil overleve 24 t med eller uten kirurgi (local: at0040)
-// Not supported rmType CLUSTER
-| 0..1|DV_QUANTITY | Høyde (cm)
-|
-| 0..1|DV_BOOLEAN | Høyde Ukjent
-|
-| 0..1|DV_QUANTITY | Vekt (kg)
-|
-| 0..1|DV_BOOLEAN | Vekt Ukjent
-|
-| 0..1|DV_QUANTITY | BMI
-|
-| 0..1|DV_BOOLEAN | BMI Ukjent
-|
-| 0..1|DV_CODED_TEXT | Type kirurgi
-a|
-* Åpen (local: at0052)
-* Laparoskopisk (local: at0053)
-* Laparoskopisk, konvertert åpen (local: at0054)
-| 0..1|DV_DATE | Operasjonsdato
-|
-| 0..1|DV_BOOLEAN | Reseksjon av tumor
-|
-// Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | Inngrep colon
-a|
-* Høyresidig hemicolectomi (local: at0061)
-* Venstresidig hemicolectomi (local: at0062)
-* Utvidet høyresidig hemicolectomi (local: at0063)
-* Utvidet venstresidig hemicolectomi (local: at0064)
-* Transversumreseksjon (local: at0065)
-* Transversum fleksurreseksjon (local: at0066)
-* Sigmoidreseksjon (ev. inkludert Hartmann) (local: at0067)
-* Total colectomi (local: at0068)
-* Polypectomi (slyngereseksjon) (local: at0069)
-* Proctocolectomi (local: at0070)
-* Annet (local: at0071)
-| 0..1|DV_TEXT | Spesifiser inngrep colon
+* at0260 -> Ingen 
+* at0261 -> Kjemoterapi 
+* at0262 -> Strålebehandling 
+* at0263 -> Strålebehandling med kjemoterapi 
+* at0264 -> Avlastende stomi 
+* at0265 -> Stenting 
+* at0266 -> Annet 
+* at0267 -> Ukjent 
+|at0022| 0..1| DV_TEXT | Spesifiser forbehandling annet
 a|
 // Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | Inngrep rectum
+|at0024| 1..1| DV_CODED_TEXT | Siktemål for behandlingen/preoperativ intensjon
 a|
-* Fremre reseksjon (local: at0075)
-* Hartmann (local: at0076)
-* Rectumamputasjon (local: at0077)
-* Proctocolectomi (local: at0078)
-* Polypectomi (slyngereseksjon) (local: at0079)
-* Konvensjonell transanal eksisjon (local: at0080)
-* Transanal endoskopisk mikrokirurgi (TEM) (local: at0081)
-* Annet (local: at0082)
-| 0..1|DV_TEXT | Spesifiser inngrep rectum
+* at0025 -> Kurativ 
+* at0026 -> Palliativ 
+* at0027 -> Ikke avklart 
+// Not supported rmType CLUSTER
+// Not supported rmType CLUSTER
+|at0029| 1..1| DV_CODED_TEXT | Hastegrad
 a|
-| 0..1|DV_BOOLEAN | Anastomose
+* at0030 -> Elektiv 
+* at0031 -> Akutt pga obstruksjon 
+* at0032 -> Akutt pga perforasjon 
+* at0033 -> Akutt pga annet 
+|at0034| 0..1| DV_TEXT | Spesifiser hastegrad annet
+a|
+|at0035| 0..1| DV_CODED_TEXT | ASA-score
+a|
+* at0036 -> I - Frisk pasient 
+* at0037 -> II - Pasient med mild systemsykdom 
+* at0038 -> III - Pasient med alvorlig systemsykdom som ikke gir nedsatt funksjon 
+* at0039 -> IV - Pasient med alvorlig systemsykdom som er livstruende 
+* at0040 -> V - Moribund pasient som ikke vil overleve 24 t med eller uten kirurgi 
+// Not supported rmType CLUSTER
+|at0046| 0..1| DV_QUANTITY | Høyde (cm)
 |
-| 0..1|DV_BOOLEAN | Avlastende stomi
+|at0048| 0..1| DV_BOOLEAN | Høyde Ukjent
 |
-// Not supported rmType CLUSTER
-| 0..1|DV_BOOLEAN | Reseksjon av naboorgan
+|at0047| 0..1| DV_QUANTITY | Vekt (kg)
 |
-| 0..*|DV_CODED_TEXT | Lokalisasjon
+|at0049| 0..1| DV_BOOLEAN | Vekt Ukjent
+|
+|at0255| 0..1| DV_QUANTITY | BMI
+|
+|at0050| 0..1| DV_BOOLEAN | BMI Ukjent
+|
+|at0051| 0..1| DV_CODED_TEXT | Type kirurgi
 a|
-* Blære (local: at0115)
-* Prostata (local: at0116)
-* Vagina (local: at0117)
-* Uterus (local: at0118)
-* Adnex/ovarium (local: at0119)
-* Sacrum (local: at0120)
-* Halebein (coccygis) (local: at0121)
-* Bekkenvegg (lymfeknute) (local: at0122)
-* Bukvegg (local: at0123)
-* Annet (local: at0124)
-| 0..*|DV_TEXT | Spesifiser lokalisasjon annet
-a|
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Utført inngrep
-a|
-* Bypass (local: at0135)
-* Avlastende stomi (local: at0136)
-* Kun eksplorativ laporatomi (local: at0137)
-* Stenting (local: at0138)
-// Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | Levermetastaser
-a|
-* Ja (local: at0243)
-* Nei (local: at0244)
-* Mistenkt (local: at0245)
-| 0..1|DV_CODED_TEXT | Peritoneal metastase/carcinomatose
-a|
-* Ja (local: at0246)
-* Nei (local: at0247)
-* Mistenkt (local: at0248)
-| 0..1|DV_CODED_TEXT | Lymfeknutemetastaser utenfor reseksjonsområdet
-a|
-* Ja (local: at0249)
-* Nei (local: at0250)
-* Mistenkt (local: at0251)
-| 0..1|DV_CODED_TEXT | Innvekst i naboorgan
-a|
-* Ja (local: at0252)
-* Nei (local: at0253)
-* Mistenkt (local: at0254)
-| 0..1|DV_TEXT | Spesifiser annet naboorgan
-a|
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Perforasjon status
-a|
-* Ingen perforasjon (local: at0147)
-* Tumornær perforasjon av tarmen (local: at0149)
-* Perforasjon tumor (local: at0151)
-| 0..1|DV_CODED_TEXT | Resttumor lokalt (kirurgens vurdering)
-a|
-* Ja (local: at0154)
-* Nei (local: at0155)
-* Usikker (local: at0156)
-* Ukjent (local: at0157)
-| 0..1|DV_BOOLEAN | Er det i samme operasjon gjort inngrep mot metastaser?
+* at0052 -> Åpen 
+* at0053 -> Laparoskopisk 
+* at0054 -> Laparoskopisk, konvertert åpen 
+|at0056| 0..1| DV_DATE | Operasjonsdato
+|
+|at0279| 0..1| DV_BOOLEAN | Reseksjon av tumor
 |
 // Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Komplikasjoner
+|at0060| 0..1| DV_CODED_TEXT | Inngrep colon
 a|
-* Ingen (local: at0269)
-* Anastomoselekkasje (local: at0271)
-* Annet (local: at0273)
-| 0..1|DV_TEXT | Spesifiser komplikasjoner annet
-a|
-| 0..1|DV_CODED_TEXT | Reoperasjon
-a|
-* Ja (local: at0171)
-* Nei (local: at0172)
-* Ukjent (local: at0173)
-| 0..1|DV_DATE | Dato reoperasjon
-|
-// Not supported rmType CLUSTER
-| 0..1|DV_DATE | Operasjonsdato (dd.mm.åååå)
-|
-| 0..*|DV_CODED_TEXT | Inngrep lokalt residiv
-a|
-* Reseksjon (local: at0180)
-* Annet (local: at0182)
-| 0..1|DV_TEXT | Spesifiser inngrep
-a|
-| 0..1|DV_CODED_TEXT | Resttumor lokalt (kirurgens vurdering)
-a|
-* Ja (local: at0189)
-* Nei (local: at0190)
-* Usikker (local: at0191)
-* Ukjent (local: at0192)
-| 0..1|DV_BOOLEAN | Er det i samme operasjon gjort inngrep mot metastase(r)
-|
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Lokalisasjon av behandlet metastase
-a|
-* Lever (local: at0194)
-* Peritoneum/carcinomatose (local: at0196)
-* Lymfeknuter utenfor reseskjonsområde (local: at0198)
-* Adnex/ovarium (local: at0200)
-* Annet (local: at0202)
-| 0..1|DV_TEXT | Spesifiser
-a|
-| 0..1|DV_DATE | Operasjonsdato (dd.mm.åååå)
-|
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Inngrep metastaser
-a|
-* Reseksjon av metastase (local: at0208)
-* Annet (local: at0210)
-| 0..1|DV_TEXT | Spesifiser inngrep mot metaste(r)
-a|
-| 0..1|DV_CODED_TEXT | Makroskopisk resttumor (kirurgens vurdering)
-a|
-* Ja (local: at0215)
-* Nei (local: at0216)
-* Usikker (local: at0217)
-* Ukjent (local: at0218)
-// Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | Laboratorium
-a|
-* AHUS, Akershus universitetssykehus (local: at0002)
-* Fürst Patologi (local: at0003)
-* Gyn Lab A/S (local: at0004)
-* Gades Institutt, Haukeland universitetssjukehus (local: at0005)
-* Helse Fonna, Haugesund sjukehus (local: at0006)
-* Helse Førde, Førde sjukehus (local: at0007)
-* Helse Møre og Romsdal, Molde sjukehus (local: at0008)
-* Helse Sunnmøre, Ålesund sjukehus (local: at0009)
-* Nordlandssykehuset, Bodø (local: at0010)
-* Oslo universitetssykehus, Aker (local: at0011)
-* Oslo universitetssykehus, Radiumhospitalet (local: at0012)
-* Oslo universitetssykehus, Rikshospitalet (local: at0013)
-* Oslo universitetssykehus, Ullevål (local: at0014)
-* Stavanger universitetssjukehus (local: at0015)
-* St. Olavs Hospital (local: at0016)
-* Sykehuset Innlandet, Lillehammer (local: at0017)
-* Sykehuset i Telemark, Skien (local: at0018)
-* Sykehuset i Vestfold, Tønsberg (local: at0019)
-* Sykehuset Østfold, Kalnes (local: at0020)
-* Sørlandet sykehus, Arendal (local: at0021)
-* Sørlandet sykehus, Kristiansand (local: at0022)
-* UNN, Universitetssykehuset i Nord-Norge (local: at0023)
-* Vestre Viken HF, Sykehuset Buskerud, Drammen (local: at0024)
-* Annet laboratorium (local: at0025)
-* Ukjent (local: at0026)
-| 0..1|DV_BOOLEAN | Ikke relevant
-|
-| 0..1|DV_TEXT | Spesifiser
-a|
-| 0..1|DV_TEXT | Preparatnummer
+* at0061 -> Høyresidig hemicolectomi 
+* at0062 -> Venstresidig hemicolectomi 
+* at0063 -> Utvidet høyresidig hemicolectomi 
+* at0064 -> Utvidet venstresidig hemicolectomi 
+* at0065 -> Transversumreseksjon 
+* at0066 -> Transversum fleksurreseksjon 
+* at0067 -> Sigmoidreseksjon (ev. inkludert Hartmann) 
+* at0068 -> Total colectomi 
+* at0069 -> Polypectomi (slyngereseksjon) 
+* at0070 -> Proctocolectomi 
+* at0071 -> Annet 
+|at0072| 0..1| DV_TEXT | Spesifiser inngrep colon
 a|
 // Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | Oppfølging/tiltak
+|at0074| 0..1| DV_CODED_TEXT | Inngrep rectum
 a|
-* Behandling ved samme institusjon (local: at0224)
-* Behandling ved annen institusjon (local: at0225)
-* Ingen videre behandling (local: at0226)
-* Ikke avklart (local: at0227)
-* Ukjent (local: at0228)
-| 0..*|DV_CODED_TEXT | Planlagt etterbehandling
+* at0075 -> Fremre reseksjon 
+* at0076 -> Hartmann 
+* at0077 -> Rectumamputasjon 
+* at0078 -> Proctocolectomi 
+* at0079 -> Polypectomi (slyngereseksjon) 
+* at0080 -> Konvensjonell transanal eksisjon 
+* at0081 -> Transanal endoskopisk mikrokirurgi (TEM) 
+* at0082 -> Annet 
+|at0083| 0..1| DV_TEXT | Spesifiser inngrep rectum
 a|
-* Strålebehandling uten kjemoterapi (local: at0229)
-* Kjemoterapi (local: at0230)
-* Strålebehandling med kjemoterapi (local: at0231)
-* Kirurgi for metastaser (local: at0232)
-* Rutinemessig kontroll (local: at0233)
-* Ikke avklart (local: at0234)
-| 0..4|DV_CODED_TEXT | Årsak ingen behandling
-a|
-* Ikke indikasjon i følge retningslinjene (local: at0235)
-* Pasientens ønske (local: at0236)
-* Annet (local: at0237)
-* Ukjent (local: at0238)
-| 0..1|DV_TEXT | Spesifiser årsak til ingen behandling
-a|
-| 1..1|DV_DATE_TIME | Time
+|at0280| 0..1| DV_BOOLEAN | Anastomose
 |
-// Not supported rmType CODE_PHRASE
-// Not supported rmType CODE_PHRASE
-// Not supported rmType PARTY_PROXY
+|at0281| 0..1| DV_BOOLEAN | Avlastende stomi
+|
+// Not supported rmType CLUSTER
+|at0282| 0..1| DV_BOOLEAN | Reseksjon av naboorgan
+|
+|at0114| 0..*| DV_CODED_TEXT | Lokalisasjon
+a|
+* at0115 -> Blære 
+* at0116 -> Prostata 
+* at0117 -> Vagina 
+* at0118 -> Uterus 
+* at0119 -> Adnex/ovarium 
+* at0120 -> Sacrum 
+* at0121 -> Halebein (coccygis) 
+* at0122 -> Bekkenvegg (lymfeknute) 
+* at0123 -> Bukvegg 
+* at0124 -> Annet 
+|at0125| 0..*| DV_TEXT | Spesifiser lokalisasjon annet
+a|
+// Not supported rmType CLUSTER
+|at0130| 0..*| DV_CODED_TEXT | Utført inngrep
+a|
+* at0135 -> Bypass 
+* at0136 -> Avlastende stomi 
+* at0137 -> Kun eksplorativ laporatomi 
+* at0138 -> Stenting 
+// Not supported rmType CLUSTER
+|at0140| 0..1| DV_CODED_TEXT | Levermetastaser
+a|
+* at0243 -> Ja 
+* at0244 -> Nei 
+* at0245 -> Mistenkt 
+|at0141| 0..1| DV_CODED_TEXT | Peritoneal metastase/carcinomatose
+a|
+* at0246 -> Ja 
+* at0247 -> Nei 
+* at0248 -> Mistenkt 
+|at0142| 0..1| DV_CODED_TEXT | Lymfeknutemetastaser utenfor reseksjonsområdet
+a|
+* at0249 -> Ja 
+* at0250 -> Nei 
+* at0251 -> Mistenkt 
+|at0143| 0..1| DV_CODED_TEXT | Innvekst i naboorgan
+a|
+* at0252 -> Ja 
+* at0253 -> Nei 
+* at0254 -> Mistenkt 
+|at0144| 0..1| DV_TEXT | Spesifiser annet naboorgan
+a|
+// Not supported rmType CLUSTER
+|at0146| 0..*| DV_CODED_TEXT | Perforasjon status
+a|
+* at0147 -> Ingen perforasjon 
+* at0149 -> Tumornær perforasjon av tarmen 
+* at0151 -> Perforasjon tumor 
+|at0153| 0..1| DV_CODED_TEXT | Resttumor lokalt (kirurgens vurdering)
+a|
+* at0154 -> Ja 
+* at0155 -> Nei 
+* at0156 -> Usikker 
+* at0157 -> Ukjent 
+|at0283| 0..1| DV_BOOLEAN | Er det i samme operasjon gjort inngrep mot metastaser?
+|
+// Not supported rmType CLUSTER
+|at0268| 0..*| DV_CODED_TEXT | Komplikasjoner
+a|
+* at0269 -> Ingen 
+* at0271 -> Anastomoselekkasje 
+* at0273 -> Annet 
+|at0169| 0..1| DV_TEXT | Spesifiser komplikasjoner annet
+a|
+|at0170| 0..1| DV_CODED_TEXT | Reoperasjon
+a|
+* at0171 -> Ja 
+* at0172 -> Nei 
+* at0173 -> Ukjent 
+|at0174| 0..1| DV_DATE | Dato reoperasjon
+|
+// Not supported rmType CLUSTER
+|at0178| 0..1| DV_DATE | Operasjonsdato (dd.mm.åååå)
+|
+|at0179| 0..*| DV_CODED_TEXT | Inngrep lokalt residiv
+a|
+* at0180 -> Reseksjon 
+* at0182 -> Annet 
+|at0184| 0..1| DV_TEXT | Spesifiser inngrep
+a|
+|at0185| 0..1| DV_CODED_TEXT | Resttumor lokalt (kirurgens vurdering)
+a|
+* at0189 -> Ja 
+* at0190 -> Nei 
+* at0191 -> Usikker 
+* at0192 -> Ukjent 
+|at0284| 0..1| DV_BOOLEAN | Er det i samme operasjon gjort inngrep mot metastase(r)
+|
+// Not supported rmType CLUSTER
+|at0193| 0..*| DV_CODED_TEXT | Lokalisasjon av behandlet metastase
+a|
+* at0194 -> Lever 
+* at0196 -> Peritoneum/carcinomatose 
+* at0198 -> Lymfeknuter utenfor reseskjonsområde 
+* at0200 -> Adnex/ovarium 
+* at0202 -> Annet 
+|at0204| 0..1| DV_TEXT | Spesifiser
+a|
+|at0205| 0..1| DV_DATE | Operasjonsdato (dd.mm.åååå)
+|
+// Not supported rmType CLUSTER
+|at0207| 0..*| DV_CODED_TEXT | Inngrep metastaser
+a|
+* at0208 -> Reseksjon av metastase 
+* at0210 -> Annet 
+|at0213| 0..1| DV_TEXT | Spesifiser inngrep mot metaste(r)
+a|
+|at0214| 0..1| DV_CODED_TEXT | Makroskopisk resttumor (kirurgens vurdering)
+a|
+* at0215 -> Ja 
+* at0216 -> Nei 
+* at0217 -> Usikker 
+* at0218 -> Ukjent 
+// Not supported rmType CLUSTER
+|at0001| 0..1| DV_CODED_TEXT | Laboratorium
+a|
+* at0002 -> AHUS, Akershus universitetssykehus 
+* at0003 -> Fürst Patologi 
+* at0004 -> Gyn Lab A/S 
+* at0005 -> Gades Institutt, Haukeland universitetssjukehus 
+* at0006 -> Helse Fonna, Haugesund sjukehus 
+* at0007 -> Helse Førde, Førde sjukehus 
+* at0008 -> Helse Møre og Romsdal, Molde sjukehus 
+* at0009 -> Helse Sunnmøre, Ålesund sjukehus 
+* at0010 -> Nordlandssykehuset, Bodø 
+* at0011 -> Oslo universitetssykehus, Aker 
+* at0012 -> Oslo universitetssykehus, Radiumhospitalet 
+* at0013 -> Oslo universitetssykehus, Rikshospitalet 
+* at0014 -> Oslo universitetssykehus, Ullevål 
+* at0015 -> Stavanger universitetssjukehus 
+* at0016 -> St. Olavs Hospital 
+* at0017 -> Sykehuset Innlandet, Lillehammer 
+* at0018 -> Sykehuset i Telemark, Skien 
+* at0019 -> Sykehuset i Vestfold, Tønsberg 
+* at0020 -> Sykehuset Østfold, Kalnes 
+* at0021 -> Sørlandet sykehus, Arendal 
+* at0022 -> Sørlandet sykehus, Kristiansand 
+* at0023 -> UNN, Universitetssykehuset i Nord-Norge 
+* at0024 -> Vestre Viken HF, Sykehuset Buskerud, Drammen 
+* at0025 -> Annet laboratorium 
+* at0026 -> Ukjent 
+|at0027| 0..1| DV_BOOLEAN | Ikke relevant
+|
+|at0028| 0..1| DV_TEXT | Spesifiser
+a|
+|at0029| 0..1| DV_TEXT | Preparatnummer
+a|
+// Not supported rmType CLUSTER
+|at0221| 0..1| DV_CODED_TEXT | Oppfølging/tiltak
+a|
+* at0224 -> Behandling ved samme institusjon 
+* at0225 -> Behandling ved annen institusjon 
+* at0226 -> Ingen videre behandling 
+* at0227 -> Ikke avklart 
+* at0228 -> Ukjent 
+|at0222| 0..*| DV_CODED_TEXT | Planlagt etterbehandling
+a|
+* at0229 -> Strålebehandling uten kjemoterapi 
+* at0230 -> Kjemoterapi 
+* at0231 -> Strålebehandling med kjemoterapi 
+* at0232 -> Kirurgi for metastaser 
+* at0233 -> Rutinemessig kontroll 
+* at0234 -> Ikke avklart 
+|at0223| 0..4| DV_CODED_TEXT | Årsak ingen behandling
+a|
+* at0235 -> Ikke indikasjon i følge retningslinjene 
+* at0236 -> Pasientens ønske 
+* at0237 -> Annet 
+* at0238 -> Ukjent 
+|at0239| 0..1| DV_TEXT | Spesifiser årsak til ingen behandling
+a|
 |====
-
 // Not supported rmType CODE_PHRASE
 // Not supported rmType CODE_PHRASE
 // Not supported rmType PARTY_PROXY

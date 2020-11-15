@@ -1,124 +1,138 @@
-= kremt_crc_kjemoterapi_v2
+= Kreftmelding kolorektalkreft dips
+
+
+== Metadata
+
+
+TemplateId:: kremt_crc_kjemoterapi_v2
+
+
+Archetype:: openEHR-EHR-COMPOSITION.kreftmelding_kolorektalkreft_dips.v1
+
+
+
+
 // Not supported rmType COMPOSITION
-// Not supported rmType EVENT_CONTEXT
-
+== EVENT_CONTEXT
+[options="header", cols="3,3,5,5,30"]
+|====
+|NodeId|Attr.|RM Type| Navn |Beskrivelse
+|at0003| 0..1| DV_BOOLEAN | Klar til sending
+|
+|at0002| 0..1| DV_TEXT | Meldingstype
+a|
+|====
 == Kreftmelding kolorektalkreft kjemoterapi dips
-[options="header", cols="3,5,5,30"]
+[options="header", cols="3,3,5,5,30"]
 |====
-|Attr.|RM Type| Navn |Beskrivelse
+|NodeId|Attr.|RM Type| Navn |Beskrivelse
 // Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | Behandling for
+|at0339| 0..1| DV_CODED_TEXT | Behandling for
 a|
-* Primærsykdom - lokal/lokalavansert inkludert spredning til regionale lymfeknuter (local: at0340)
-* Primærsykdom - avansert sykdom (fjernspredning) (local: at0341)
-* Tilbakefall - lokal/lokalavansert sykdom inkludert spredning til regionale lymfeknuter (local: at0342)
-* Tilbakefall - avansert sykdom (fjernspredning) (local: at0343)
-| 0..*|DV_CODED_TEXT | Lokalisasjon av metastaser
+* at0340 -> Primærsykdom - lokal/lokalavansert inkludert spredning til regionale lymfeknuter 
+* at0341 -> Primærsykdom - avansert sykdom (fjernspredning) 
+* at0342 -> Tilbakefall - lokal/lokalavansert sykdom inkludert spredning til regionale lymfeknuter 
+* at0343 -> Tilbakefall - avansert sykdom (fjernspredning) 
+|at0402| 0..*| DV_CODED_TEXT | Lokalisasjon av metastaser
 a|
-* Lever (local: at0403)
-* Lunge (local: at0405)
-* Peritoneum/peritoneal carcinomatose (local: at0407)
-* Skjelett (local: at0409)
-* Hjerne (local: at0411)
-* Lymfeknuter utenfor reseksjonsområdet (local: at0413)
-* Annet (local: at0415)
-| 0..1|DV_TEXT | Spesifiser lokalisasjon
-a|
-// Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | Lokalisajon
-a|
-* Colon (C18-C19) (local: at0002)
-* Rectum (C20) (local: at0003)
-| 0..1|DV_CODED_TEXT | Spesifiser lokalisajon Colon
-a|
-* Cøkum (C18.0) (local: at0006)
-* Appendix (C18.1) (local: at0007)
-* Ascendens (C18.2) (local: at0008)
-* Høyre fleksur (C18.3) (local: at0009)
-* Transversum (C18.4) (local: at0010)
-* Venstre fleksur (C18.5) (local: at0011)
-* Descendens (C18.6) (local: at0012)
-* Sigmoideum, ≥ 20 cm (C18.7) (local: at0013)
-* Tykktarm, overlappende (C18.8) (local: at0014)
-* Tykktarm uspesifisert (C18.9) (local: at0015)
-* Rectosigmoid ≥ 16 og < 20 cm (C19) (local: at0016)
-| 0..1|DV_QUANTITY | Angi avstand fra analåpning til nedre kant av tumor (målt på stivt skop)
-|
-| 0..1|DV_BOOLEAN | Ukjent
-|
-| 0..1|DV_QUANTITY | Avstand fra øvre kant av M.puborektalis til nedre kant av tumor (målt ved MR)
-|
-| 0..1|DV_BOOLEAN | Ukjent
-|
-| 0..1|DV_CODED_TEXT | Klinisk sikker kreft
-a|
-* Ja (local: at0022)
-* Usikker (local: at0023)
-// Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | Hensikten med behandlingsplanen
-a|
-* Adjuvant kjemoterapi (local: at0357)
-* Strålesensitiviserende behandling (local: at0358)
-* Kjemoterapi før planlagt kirurgi (local: at0359)
-* Livsforlengende og lindrende behandling (local: at0360)
-// Not supported rmType CLUSTER
-| 0..1|DV_QUANTITY | CEA
-|
-| 0..1|DV_BOOLEAN | Ikke tatt
-|
-// Not supported rmType CLUSTER
-| 0..1|DV_CODED_TEXT | ECOG funksjonsstatus
-a|
-* 0 - Full daglig aktivitet (local: at0002)
-* 1 - Oppegående (local: at0003)
-* 2 - Sengeliggende < 50 % av dagtid (local: at0004)
-* 3 - Sengeliggende > 50 % av dagtid (local: at0005)
-* 4 - Helt sengeliggende (local: at0006)
-* Ukjent (local: at0007)
-| 0..1|DV_DATE_TIME | Startdato for behandlingen(dd.mm.åååå)
-|
-| 0..1|DV_CODED_TEXT | Linje
-a|
-* 1.linje palliativ behandling (local: at0371)
-* 2.linje palliativ behandling (local: at0372)
-* 3.linje palliativ behandling (local: at0373)
-* Seinere palliativ linje (local: at0374)
-// Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Årsaker
-a|
-* Bivirkninger/toksisitet (local: at0418)
-* Progresjon (local: at0420)
-* Annet (local: at0422)
-* Ukjent (local: at0424)
-| 0..1|DV_TEXT | Spesifiser årsak
+* at0403 -> Lever 
+* at0405 -> Lunge 
+* at0407 -> Peritoneum/peritoneal carcinomatose 
+* at0409 -> Skjelett 
+* at0411 -> Hjerne 
+* at0413 -> Lymfeknuter utenfor reseksjonsområdet 
+* at0415 -> Annet 
+|at0352| 0..1| DV_TEXT | Spesifiser lokalisasjon
 a|
 // Not supported rmType CLUSTER
-| 0..*|DV_CODED_TEXT | Medikamenter
+|at0001| 0..1| DV_CODED_TEXT | Lokalisajon
 a|
-* Kapecitabin (local: at0383)
-* 5-FU (local: at0385)
-* Kalsiumfolinat (local: at0387)
-* Oksaliplatin (local: at0389)
-* Irinotecan (local: at0391)
-* VEGF-hemmer (local: at0393)
-* EGFR-hemmer (local: at0395)
-* Annet (local: at0397)
-| 0..1|DV_TEXT | Spesifiser medikament
+* at0002 -> Colon (C18-C19) 
+* at0003 -> Rectum (C20) 
+|at0004| 0..1| DV_CODED_TEXT | Spesifiser lokalisajon Colon
+a|
+* at0006 -> Cøkum (C18.0) 
+* at0007 -> Appendix (C18.1) 
+* at0008 -> Ascendens (C18.2) 
+* at0009 -> Høyre fleksur (C18.3) 
+* at0010 -> Transversum (C18.4) 
+* at0011 -> Venstre fleksur (C18.5) 
+* at0012 -> Descendens (C18.6) 
+* at0013 -> Sigmoideum, ≥ 20 cm (C18.7) 
+* at0014 -> Tykktarm, overlappende (C18.8) 
+* at0015 -> Tykktarm uspesifisert (C18.9) 
+* at0016 -> Rectosigmoid ≥ 16 og < 20 cm (C19) 
+|at0026| 0..1| DV_QUANTITY | Angi avstand fra analåpning til nedre kant av tumor (målt på stivt skop)
+|
+|at0033| 0..1| DV_BOOLEAN | Ukjent
+|
+|at0034| 0..1| DV_QUANTITY | Avstand fra øvre kant av M.puborektalis til nedre kant av tumor (målt ved MR)
+|
+|at0032| 0..1| DV_BOOLEAN | Ukjent
+|
+|at0021| 0..1| DV_CODED_TEXT | Klinisk sikker kreft
+a|
+* at0022 -> Ja 
+* at0023 -> Usikker 
+// Not supported rmType CLUSTER
+|at0355| 0..1| DV_CODED_TEXT | Hensikten med behandlingsplanen
+a|
+* at0357 -> Adjuvant kjemoterapi 
+* at0358 -> Strålesensitiviserende behandling 
+* at0359 -> Kjemoterapi før planlagt kirurgi 
+* at0360 -> Livsforlengende og lindrende behandling 
+// Not supported rmType CLUSTER
+|at0001| 0..1| DV_QUANTITY | CEA
+|
+|at0002| 0..1| DV_BOOLEAN | Ikke tatt
+|
+// Not supported rmType CLUSTER
+|at0001| 0..1| DV_CODED_TEXT | ECOG funksjonsstatus
+a|
+* at0002 -> 0 - Full daglig aktivitet 
+* at0003 -> 1 - Oppegående 
+* at0004 -> 2 - Sengeliggende < 50 % av dagtid 
+* at0005 -> 3 - Sengeliggende > 50 % av dagtid 
+* at0006 -> 4 - Helt sengeliggende 
+* at0007 -> Ukjent 
+|at0369| 0..1| DV_DATE_TIME | Startdato for behandlingen(dd.mm.åååå)
+|
+|at0370| 0..1| DV_CODED_TEXT | Linje
+a|
+* at0371 -> 1.linje palliativ behandling 
+* at0372 -> 2.linje palliativ behandling 
+* at0373 -> 3.linje palliativ behandling 
+* at0374 -> Seinere palliativ linje 
+// Not supported rmType CLUSTER
+|at0417| 0..*| DV_CODED_TEXT | Årsaker
+a|
+* at0418 -> Bivirkninger/toksisitet 
+* at0420 -> Progresjon 
+* at0422 -> Annet 
+* at0424 -> Ukjent 
+|at0379| 0..1| DV_TEXT | Spesifiser årsak
 a|
 // Not supported rmType CLUSTER
-| 0..1|DV_DATE | Meldedato
-|
-| 0..1|DV_TEXT | Melders navn
+|at0382| 0..*| DV_CODED_TEXT | Medikamenter
 a|
-| 0..1|DV_TEXT | Melder ID
+* at0383 -> Kapecitabin 
+* at0385 -> 5-FU 
+* at0387 -> Kalsiumfolinat 
+* at0389 -> Oksaliplatin 
+* at0391 -> Irinotecan 
+* at0393 -> VEGF-hemmer 
+* at0395 -> EGFR-hemmer 
+* at0397 -> Annet 
+|at0399| 0..1| DV_TEXT | Spesifiser medikament
 a|
-| 1..1|DV_DATE_TIME | Time
+// Not supported rmType CLUSTER
+|at0001| 0..1| DV_DATE | Meldedato
 |
-// Not supported rmType CODE_PHRASE
-// Not supported rmType CODE_PHRASE
-// Not supported rmType PARTY_PROXY
+|at0002| 0..1| DV_TEXT | Melders navn
+a|
+|at0003| 0..1| DV_TEXT | Melder ID
+a|
 |====
-
 // Not supported rmType CODE_PHRASE
 // Not supported rmType CODE_PHRASE
 // Not supported rmType PARTY_PROXY
